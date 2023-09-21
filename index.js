@@ -8,15 +8,18 @@ const cors = require("cors");
 const localStrategy = require("passport-local").Strategy;
 const jwt = require("jsonwebtoken");
 const User = require("./models/user");
+const dotenv = require("dotenv");
 const { ShoppingList, Product } = require("./models/shoppingData");
-const uri =
-    "mongodb+srv://davidguzman:Sofia2309@cluster0.xp9mjch.mongodb.net/?retryWrites=true&w=majority";
 
 //Initialization
 const app = express();
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
+const CONNECTION = process.env.CONNECTION;
 
 mongoose
-    .connect(uri, {
+    .connect(CONNECTION, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -222,8 +225,8 @@ app.put("/shoppingList/:id/list", async (req, res) => {
     res.json(data);
 });
 
-app.listen(3001, () => {
-    console.log("Mi servidor es el " + 3001);
+app.listen(PORT, () => {
+    console.log("Mi servidor es el " + PORT);
 });
 
 module.exports = app;
