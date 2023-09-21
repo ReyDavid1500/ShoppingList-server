@@ -225,3 +225,5 @@ app.put("/shoppingList/:id/list", async (req, res) => {
 app.listen(3001, () => {
     console.log("Mi servidor es el " + 3001);
 });
+
+module.exports = app;
