@@ -28,7 +28,9 @@ mongoose
 //Middlewares 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors({
+    origin: "https://shopping-list-server-gold.vercel.app/"
+}));
 app.use(bodyParser.json());
 app.use(session({
     secret: "secretcode",

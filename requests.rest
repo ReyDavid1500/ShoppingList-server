@@ -58,5 +58,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3001/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJ1c2VyRW1haWwiOiJkYXZpZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGR0RNbC9YL2w0RE0yUTIuRzN5bkQuTW1JVFA0cW5DR3U5TUNOaU5FUFprVVhKb3Q2cVdEcSIsImlhdCI6MTY5NDcyNjk4MSwiZXhwIjoxNjk0NzMwNTgxfQ.hJGiul_62reDa-GRyitbyKakCbXMYUZFW4-Xw8xBzng
+POST https://shopping-list-server-gold.vercel.app/login
+Content-Type: application/json
+
+{
+    "email": "david@gmail.com",
+    "password": "password"
+}
