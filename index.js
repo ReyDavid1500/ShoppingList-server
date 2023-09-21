@@ -29,7 +29,8 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-    origin: "https://shopping-list-server-gold.vercel.app/"
+    origin: "https://shopping-list-server-gold.vercel.app/",
+    credentials: true
 }));
 app.use(bodyParser.json());
 app.use(session({
