@@ -1,0 +1,62 @@
+GET http://localhost:3001/shoppingLists
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJ1c2VyRW1haWwiOiJkYXZpZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGR0RNbC9YL2w0RE0yUTIuRzN5bkQuTW1JVFA0cW5DR3U5TUNOaU5FUFprVVhKb3Q2cVdEcSIsImlhdCI6MTY5NDczMDkzNywiZXhwIjoxNjk0NzM0NTM3fQ.hDX_xr5_sG8svBVizoBpxWGCqzY_bsqyqm_wMR7zSX8
+
+###
+
+POST http://localhost:3001/shoppingList/new 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJ1c2VyRW1haWwiOiJkYXZpZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGR0RNbC9YL2w0RE0yUTIuRzN5bkQuTW1JVFA0cW5DR3U5TUNOaU5FUFprVVhKb3Q2cVdEcSIsImlhdCI6MTY5NDczODE0NywiZXhwIjoxNjk0NzQxNzQ3fQ.6Df9hE_DR4msfaVlNmqr1pGHblQWYjbx98DHc8R4zUc
+
+{
+    "name": "Compra AgroNorte"
+}
+
+###
+
+DELETE http://localhost:3001/shoppingList/64f8d3729cdc03190858b0bb
+
+###
+
+POST http://localhost:3001/shoppingList/64f64dc1d47cff1f7b17c40e/list
+Content-Type: application/json
+
+{
+    "name": "Platano"
+}
+
+###
+
+PATCH  http://localhost:3001/shoppingList/64f91a4f07bb327f13e1aac5/name
+Content-Type: application/json
+
+{
+    "name": "Compra Jumbo2"
+}
+
+###
+
+PUT http://localhost:3001/shoppingList/64f64dc1d47cff1f7b17c40e/list/64f676f8d01f6db81db74d6d
+Content-Type: application/json
+
+{
+    "isChecked": false
+}
+
+###
+
+DELETE http://localhost:3001/shoppingList/64f91a4f07bb327f13e1aac5/list
+Content-Type: application/json
+
+### 
+
+PUT http://localhost:3001/shoppingList/64f91a4f07bb327f13e1aac5/list
+Content-Type: application/json
+
+{
+    "isChecked": true
+}
+
+###
+
+GET http://localhost:3001/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJ1c2VyRW1haWwiOiJkYXZpZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGR0RNbC9YL2w0RE0yUTIuRzN5bkQuTW1JVFA0cW5DR3U5TUNOaU5FUFprVVhKb3Q2cVdEcSIsImlhdCI6MTY5NDcyNjk4MSwiZXhwIjoxNjk0NzMwNTgxfQ.hJGiul_62reDa-GRyitbyKakCbXMYUZFW4-Xw8xBzng
