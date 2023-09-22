@@ -76,6 +76,10 @@ require("./auth")
 
 //USER FUNCTIONS
 
+app.post("/healthy", (req, res) => {
+    res.json(req.body);
+})
+
 app.post("/register", async (req, res) => {
     try {
         const { email, password } = req.body
@@ -228,5 +232,3 @@ app.put("/shoppingList/:id/list", async (req, res) => {
 app.listen(PORT, () => {
     console.log("Mi servidor es el " + PORT);
 });
-
-module.exports = app;
