@@ -17,6 +17,7 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const CONNECTION = process.env.CONNECTION;
+console.log(CONNECTION);
 
 mongoose
     .connect(CONNECTION, {
