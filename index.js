@@ -24,7 +24,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => console.log("Connected to DB"))
-    .catch(console.error);
+    .catch((error) => console.log("Connection Error ", error));
 //Middlewares 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -76,8 +76,15 @@ require("./auth")
 
 //USER FUNCTIONS
 
-app.post("/healthy", (req, res) => {
-    res.json(req.body);
+app.post("/healthy", async (req, res) => {
+    try {
+        const shoppingList = await ShoppingList.find()
+        res.json(shoppingList);
+    } catch (error) {
+        console.log("Healthy Error ", error);
+        res.send("Error");
+    }
+
 })
 
 app.post("/register", async (req, res) => {
