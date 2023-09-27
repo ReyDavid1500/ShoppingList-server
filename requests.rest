@@ -1,5 +1,5 @@
-GET http://localhost:3001/shoppingLists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJ1c2VyRW1haWwiOiJkYXZpZEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRGR0RNbC9YL2w0RE0yUTIuRzN5bkQuTW1JVFA0cW5DR3U5TUNOaU5FUFprVVhKb3Q2cVdEcSIsImlhdCI6MTY5NDczMDkzNywiZXhwIjoxNjk0NzM0NTM3fQ.hDX_xr5_sG8svBVizoBpxWGCqzY_bsqyqm_wMR7zSX8
+GET https://shopping-list-server-gold.vercel.app/shoppingLists
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTAzNWQ3M2Y1ODFmOTc1ZTNlNGRmYmQiLCJlbWFpbCI6ImRhdmlkQGdtYWlsLmNvbSIsImlhdCI6MTY5NTM4NzY3NiwiZXhwIjoxNjk1NDc0MDc2fQ.Y-ZhoHRdISTCzsPLalwi3VWLpQT-mMWRiWVHTJY0eGQ
 
 ###
 
@@ -58,10 +58,19 @@ Content-Type: application/json
 
 ###
 
-POST https://shopping-list-server-gold.vercel.app/login
+POST http://localhost:3000/login
 Content-Type: application/json
 
 {
     "email": "david@gmail.com",
     "password": "password"
+}
+
+###
+
+POST https://shoppinglist-api-ctyk.onrender.com/healthy
+Content-Type: application/json
+
+{
+    "isChecked": true
 }
