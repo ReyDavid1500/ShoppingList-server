@@ -11,7 +11,6 @@ const User = require("./models/user");
 const dotenv = require("dotenv");
 const { ShoppingList, Product } = require("./models/shoppingData");
 
-//Initialization
 const app = express();
 dotenv.config();
 
@@ -26,7 +25,7 @@ mongoose
     })
     .then(() => console.log("Connected to DB"))
     .catch((error) => console.log("Connection Error ", error));
-//Middlewares 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -39,7 +38,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//Passport Config
 passport.use(
     new localStrategy(
         { usernameField: "email" },
@@ -72,10 +70,7 @@ passport.deserializeUser(async (id, done) => {
     }
 })
 
-//JWT Strategy
 require("./auth")
-
-//USER FUNCTIONS
 
 app.post("/healthy", async (req, res) => {
     try {
@@ -137,9 +132,6 @@ app.get("/user", passport.authenticate("jwt", { session: false }), (req, res) =>
     return res.status(200).json({ token, user: { _id, email } })
 });
 
-//como hacer enpoint que tome el Token y lo invalide
-
-//App Data Functions 
 app.get("/shoppingLists", passport.authenticate("jwt", { session: false }), async (req, res) => {
     const { _id } = req.user
     const shoppingLists = await ShoppingList.find({ isDelete: false, userId: _id })
